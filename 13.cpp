@@ -1,39 +1,39 @@
 class Solution {
 public:
     int romanToInt(string s) {
-        int n=0;
+        int integer=0;
         int l=s.length()-1;
         for(int i=0;i<l;i++){
             string tmp="";
             tmp+=s[i];
             tmp+=s[i+1];
             if(tmp=="IV") {
-                n += 4;
+                integer += 4;
                 s.erase(i, 2);
                 i--;
             }
             else if(tmp=="IX") {
-                n += 9;
+                integer += 9;
                 s.erase(i, 2);
                 i--;
             }
             else if(tmp=="XL") {
-                n += 40;
+                integer += 40;
                 s.erase(i, 2);
                 i--;
             }
             else if(tmp=="XC") {
-                n += 90;
+                integer += 90;
                 s.erase(i, 2);
                 i--;
             }
             else if(tmp=="CD") {
-                n += 400;
+                integer += 400;
                 s.erase(i, 2);
                 i--;
             }
             else if(tmp=="CM") {
-                n += 900;
+                integer += 900;
                 s.erase(i, 2);
                 i--;
             }
@@ -43,25 +43,25 @@ public:
         for(int i=0;i<l;i++){
             switch (s[i]) {
                 case 'I' :
-                    n+=1;
+                    integer+=1;
                     break;
                 case 'V' :
-                    n+=5;
+                    integer+=5;
                     break;
                 case 'X' :
-                    n+=10;
+                    integer+=10;
                     break;
                 case 'L' :
-                    n+=50;
+                    integer+=50;
                     break;
                 case 'C' :
-                    n+=100;
+                    integer+=100;
                     break;
                 case 'D' :
-                    n+=500;
+                    integer+=500;
                     break;
                 case 'M' :
-                    n+=1000;
+                    integer+=1000;
                     break;
             }
             l=s.length();
