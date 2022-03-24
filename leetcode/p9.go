@@ -4,7 +4,7 @@ func isPalindrome(x int) bool {
 	if x < 0 {
 		return false
 	}
-	var digits []int
+	digits := []int{}
 	for x > 0 {
 		digits = append(digits, x%10)
 		x /= 10
